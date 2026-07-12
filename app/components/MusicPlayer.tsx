@@ -9,6 +9,7 @@ export default function MusicPlayer() {
   const oscillatorRef = useRef<OscillatorNode | null>(null);
   const intervalRef = useRef<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const hasUserGestureRef = useRef(false);
 
   const stopSynth = () => {
     if (intervalRef.current) {
@@ -61,6 +62,48 @@ export default function MusicPlayer() {
     }, 400);
   };
 
+  const playAudio = async () => {
+    const audio = audioRef.current;
+    if (!audio) {
+      startSynth();
+      return;
+    }
+
+    if (audio.readyState < 2) {
+      await new Promise<void>((resolve) => {
+        const onReady = () => {
+          audio.removeEventListener('canplaythrough', onReady);
+          audio.removeEventListener('canplay', onReady);
+          resolve();
+        };
+
+        audio.addEventListener('canplaythrough', onReady, { once: true });
+        audio.addEventListener('canplay', onReady, { once: true });
+        audio.load();
+      });
+    }
+
+    try {
+      audio.currentTime = 0;
+      await audio.play();
+      stopSynth();
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'NotAllowedError') {
+        return;
+      }
+
+      if (audio.readyState < 2) {
+        audio.addEventListener('canplaythrough', () => {
+          void playAudio();
+        }, { once: true });
+        audio.load();
+        return;
+      }
+
+      startSynth();
+    }
+  };
+
   useEffect(() => {
     return () => {
       stopSynth();
@@ -73,29 +116,38 @@ export default function MusicPlayer() {
   }, []);
 
   useEffect(() => {
+    const activatePlayback = () => {
+      hasUserGestureRef.current = true;
+      if (playing) {
+        void playAudio();
+      }
+    };
+
+    const events = ['pointerdown', 'touchstart', 'keydown', 'click'] as const;
+    events.forEach((event) => {
+      document.addEventListener(event, activatePlayback, { capture: true });
+    });
+
+    return () => {
+      events.forEach((event) => {
+        document.removeEventListener(event, activatePlayback, { capture: true });
+      });
+    };
+  }, [playing]);
+
+  useEffect(() => {
     if (!playing) {
       stopSynth();
       audioRef.current?.pause();
       return;
     }
 
-    const audio = audioRef.current;
-    if (audio) {
-      const playAudio = async () => {
-        try {
-          audio.currentTime = 0;
-          await audio.play();
-          stopSynth();
-        } catch {
-          startSynth();
-        }
-      };
-
+    if (!hasUserGestureRef.current) {
       void playAudio();
       return;
     }
 
-    startSynth();
+    void playAudio();
   }, [playing]);
 
   const toggle = () => setPlaying((value) => !value);
