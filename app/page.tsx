@@ -5,7 +5,7 @@ import Countdown from './components/Countdown';
 import MusicPlayer from './components/MusicPlayer';
 import SectionReveal from './components/SectionReveal';
 import RsvpSection from './components/RsvpSection';
-import ShareSection from './components/ShareSection';
+// import ShareSection from './components/ShareSection';
 
 export const metadata: Metadata = {
   title: 'Anshu & Sunny — Ring Ceremony · 20 August 2026',
@@ -63,19 +63,27 @@ export default function Page() {
             fontSize:'10px', letterSpacing:'5px', color:gold(.8),
             textTransform:'uppercase', marginBottom:'40px',
           }}>
-            You are cordially invited to celebrate
+            We warmly invite you to join us to celebrate the engagement of
           </div>
 
           {/* Names */}
           <div className="anim-4" style={{ marginBottom:'20px' }}>
             <div className="shimmer-text" style={{ fontFamily:"'Dancing Script',cursive", fontSize:'clamp(52px,10vw,72px)', lineHeight:1.1, fontWeight:400 }}>
-              Anshu Kumari
+              Anshu
             </div>
-            <div className="heartbeat" style={{ fontFamily:"'Cormorant Garamond',serif", fontStyle:'italic', fontSize:'44px', color:gold(.5), display:'block', lineHeight:1.2, margin:'4px 0' }}>
+            <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'15px', color:'rgba(255,240,200,.65)', lineHeight:1.6, marginTop:'8px' }}>
+              Daughter of Shri. &amp; Smt. Manoj<br/>
+              and Sushma Keshri
+            </div>
+            <div className="heartbeat" style={{ fontFamily:"'Cormorant Garamond',serif", fontStyle:'italic', fontSize:'44px', color:gold(.5), display:'block', lineHeight:1.2, margin:'12px 0' }}>
               ♡
             </div>
             <div className="shimmer-text" style={{ fontFamily:"'Dancing Script',cursive", fontSize:'clamp(52px,10vw,72px)', lineHeight:1.1, fontWeight:400 }}>
-              Sunny Keshri
+              Sunny
+            </div>
+            <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'15px', color:'rgba(255,240,200,.65)', lineHeight:1.6, marginTop:'8px' }}>
+              Son of Shri. &amp; Smt. Omkar<br/>
+              and Prabhawati Keshri
             </div>
           </div>
 
@@ -117,20 +125,23 @@ export default function Page() {
 
           {/* Scroll hint */}
           <div className="scroll-hint" style={{
-            position:'absolute', bottom:'30px', left:'50%',
-            display:'flex', flexDirection:'column', alignItems:'center', gap:'8px',
-            color:gold(.4), fontSize:'11px', letterSpacing:'3px',
+            position:'absolute', bottom:'20px', left:'50%',
+            display:'flex', flexDirection:'column', alignItems:'center', gap:'6px',
+            color:gold(.4), fontSize:'10px', letterSpacing:'2px',
             textTransform:'uppercase', fontFamily:"'Cinzel',serif",
+            transform:'translateX(-50%)',
+            pointerEvents:'none',
+            opacity:0.9,
           }}>
             Scroll
-            <div style={{ width:'20px', height:'20px', borderRight:`1px solid ${gold(.4)}`, borderBottom:`1px solid ${gold(.4)}`, transform:'rotate(45deg)' }}/>
+            <div style={{ width:'16px', height:'16px', borderRight:`1px solid ${gold(.4)}`, borderBottom:`1px solid ${gold(.4)}`, transform:'rotate(45deg)' }}/>
           </div>
         </section>
 
         {/* ══════════ STORY ══════════ */}
         <SectionReveal>
           <section style={{ padding:'60px 30px', textAlign:'center', borderTop:`1px solid ${gold(.08)}` }}>
-            <div style={{ fontFamily:"'Cinzel',serif", fontSize:'10px', letterSpacing:'5px', color:gold(.5), textTransform:'uppercase', marginBottom:'30px' }}>Their Story</div>
+            {/* <div style={{ fontFamily:"'Cinzel',serif", fontSize:'10px', letterSpacing:'5px', color:gold(.5), textTransform:'uppercase', marginBottom:'30px' }}>Their Story</div> */}
             <div style={{ fontFamily:"'Cormorant Garamond',serif", fontStyle:'italic', fontSize:'36px', color:'rgba(240,208,128,.9)', marginBottom:'20px', fontWeight:300 }}>
               A Love Destined to Be
             </div>
@@ -204,7 +215,7 @@ export default function Page() {
               Wear your finest ethnic wear — think royal, think vibrant, think <span style={{ color:'rgba(240,208,128,.9)', fontStyle:'italic' }}>gold</span>. Come hungry, come happy, and come ready to dance!
             </p>
             <div style={{ display:'flex', flexWrap:'wrap', justifyContent:'center' }}>
-              {['🪴 Green & Gold Theme','🎶 Live Music & DJ','🍽 Grand Feast Awaits','📸 Photo Booth Fun','💃 Dance Like Nobody\'s Watching'].map(n => (
+              {['🪴 Wear your finest ethnic','🎶 Live Music & DJ','🍽 Grand Feast Awaits','📸 Photo Booth Fun','💃 Dance Like Nobody\'s Watching'].map(n => (
                 <span key={n} style={{ display:'inline-block', background:gold(.08), border:`1px solid ${gold(.2)}`, padding:'10px 20px', fontFamily:"'Cormorant Garamond',serif", fontStyle:'italic', fontSize:'14px', color:'rgba(240,208,128,.7)', margin:'8px' }}>
                   {n}
                 </span>
@@ -238,9 +249,9 @@ export default function Page() {
         </SectionReveal>
 
         {/* ══════════ SHARE ══════════ */}
-        <SectionReveal>
+        {/* <SectionReveal>
           <ShareSection />
-        </SectionReveal>
+        </SectionReveal> */}
 
         {/* ══════════ FOOTER ══════════ */}
         <SectionReveal>
