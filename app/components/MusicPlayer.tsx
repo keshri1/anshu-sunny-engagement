@@ -9,7 +9,6 @@ export default function MusicPlayer() {
   const oscillatorRef = useRef<OscillatorNode | null>(null);
   const intervalRef = useRef<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const hasUserGestureRef = useRef(false);
 
   const stopSynth = () => {
     if (intervalRef.current) {
@@ -84,7 +83,6 @@ export default function MusicPlayer() {
     }
 
     try {
-      audio.currentTime = 0;
       await audio.play();
       stopSynth();
     } catch (error) {
@@ -116,34 +114,9 @@ export default function MusicPlayer() {
   }, []);
 
   useEffect(() => {
-    const activatePlayback = () => {
-      hasUserGestureRef.current = true;
-      if (playing) {
-        void playAudio();
-      }
-    };
-
-    const events = ['pointerdown', 'touchstart', 'keydown', 'click'] as const;
-    events.forEach((event) => {
-      document.addEventListener(event, activatePlayback, { capture: true });
-    });
-
-    return () => {
-      events.forEach((event) => {
-        document.removeEventListener(event, activatePlayback, { capture: true });
-      });
-    };
-  }, [playing]);
-
-  useEffect(() => {
     if (!playing) {
       stopSynth();
       audioRef.current?.pause();
-      return;
-    }
-
-    if (!hasUserGestureRef.current) {
-      void playAudio();
       return;
     }
 
