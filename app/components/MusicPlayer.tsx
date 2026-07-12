@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function MusicPlayer() {
   const [playing, setPlaying] = useState(true);
+  const audioSrc = '/music/kesariya.mp3?v=2';
   const audioContextRef = useRef<AudioContext | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
   const oscillatorRef = useRef<OscillatorNode | null>(null);
@@ -106,7 +107,7 @@ export default function MusicPlayer() {
       background:'rgba(10,2,8,.85)', border:'1px solid rgba(212,175,55,.3)',
       padding:'10px 16px', backdropFilter:'blur(10px)',
     }}>
-      <audio ref={audioRef} src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto" />
+      <audio ref={audioRef} src={audioSrc} preload="auto" />
       <button
         onClick={toggle}
         aria-label={playing ? 'Pause music' : 'Play music'}
