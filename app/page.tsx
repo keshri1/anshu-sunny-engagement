@@ -5,6 +5,7 @@ import Countdown from './components/Countdown';
 import MusicPlayer from './components/MusicPlayer';
 import SectionReveal from './components/SectionReveal';
 import RsvpSection from './components/RsvpSection';
+
 // import ShareSection from './components/ShareSection';
 
 export const metadata: Metadata = {
@@ -168,7 +169,13 @@ export default function Page() {
               {/* Date */}
               <div style={{ background:gold(.04), border:`1px solid ${gold(.15)}`, padding:'28px 20px', position:'relative', overflow:'hidden' }}>
                 <div style={{ position:'absolute', top:0, left:0, right:0, height:'2px', background:`linear-gradient(to right,transparent,${gold(.5)},transparent)` }}/>
-                <div style={{ fontSize:'24px', marginBottom:'12px' }}>📅</div>
+                <div style={{ fontSize:'32px', marginBottom:'12px', display:'flex', justifyContent:'center', alignItems:'center', color:'rgba(240,208,128,.9)' }}>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M3 9h18" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M8 3v4M16 3v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </div>
                 <div style={{ fontFamily:"'Cinzel',serif", fontSize:'9px', letterSpacing:'4px', color:gold(.5), textTransform:'uppercase', marginBottom:'8px' }}>Date</div>
                 <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'18px', color:'rgba(240,208,128,.9)', lineHeight:1.4, fontWeight:300 }}>Thursday<br/>20th August 2026</div>
               </div>
@@ -215,7 +222,7 @@ export default function Page() {
               Wear your finest ethnic wear — think royal, think vibrant, think <span style={{ color:'rgba(240,208,128,.9)', fontStyle:'italic' }}>gold</span>. Come hungry, come happy, and come ready to dance!
             </p>
             <div style={{ display:'flex', flexWrap:'wrap', justifyContent:'center' }}>
-              {['🪴 Wear your finest ethnic','🎶 Live Music & DJ','🍽 Grand Feast Awaits','📸 Photo Booth Fun','💃 Dance Like Nobody\'s Watching'].map(n => (
+              {['🪴 Wear your finest ethnic','🎶  Music & DJ','🍽 Grand Feast Awaits','📸 Photo Booth Fun','💃 Dance Like Nobody\'s Watching'].map(n => (
                 <span key={n} style={{ display:'inline-block', background:gold(.08), border:`1px solid ${gold(.2)}`, padding:'10px 20px', fontFamily:"'Cormorant Garamond',serif", fontStyle:'italic', fontSize:'14px', color:'rgba(240,208,128,.7)', margin:'8px' }}>
                   {n}
                 </span>
@@ -230,8 +237,8 @@ export default function Page() {
             <div style={{ fontFamily:"'Cinzel',serif", fontSize:'10px', letterSpacing:'5px', color:gold(.5), textTransform:'uppercase', marginBottom:'30px' }}>With Blessings From</div>
             <div style={{ fontFamily:"'Cormorant Garamond',serif", fontStyle:'italic', fontSize:'36px', color:'rgba(240,208,128,.9)', marginBottom:'30px', fontWeight:300 }}>Our Beloved Families</div>
             {[
-              { side: "Bride's Family", name: 'Kumari Family, Patna' },
-              { side: "Groom's Family", name: 'Keshri Family, Patna' },
+              { side: "Bride's Family", name: 'Keshri Family, Dhanbad' },
+              { side: "Groom's Family", name: 'Keshri Family, Siwan' },
             ].map(({ side, name }) => (
               <div key={side} style={{ margin:'20px 0' }}>
                 <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'13px', letterSpacing:'4px', textTransform:'uppercase', color:gold(.4), marginBottom:'12px' }}>{side}</div>
