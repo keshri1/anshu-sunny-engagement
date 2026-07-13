@@ -1,5 +1,11 @@
 'use client';
 import { useState } from 'react';
+import type { Translations } from '../utils/translations';
+
+interface RsvpSectionProps {
+  t: Pick<Translations, 'willYouJoinUs' | 'rsvp' | 'rsvpSubtext' | 'attending' | 'notAttending'>;
+  isHindi?: boolean;
+}
 
 function launch() {
   const emojis = ['🎉','✨','💛','🌟','🎊','💍','🌸'];
@@ -31,36 +37,42 @@ function launchSad() {
   }
 }
 
-export default function RsvpSection() {
+export default function RsvpSection({ t, isHindi = false }: RsvpSectionProps) {
   const [msg, setMsg] = useState('');
 
-  const yes = () => { setMsg('💛 Yay! We cannot wait to celebrate with you!'); launch(); };
-  const no  = () => { setMsg('🤍 We will miss you, but your blessings mean the world!'); launchSad(); };
+  const yes = () => {
+    setMsg(isHindi ? '💛 हम आपके साथ उत्सव मनाने के लिए बहुत उत्साहित हैं!' : '💛 Yay! We cannot wait to celebrate with you!');
+    launch();
+  };
+  const no = () => {
+    setMsg(isHindi ? '🤍 हम आपको याद करेंगे, लेकिन आपके आशीर्वाद हमारे लिए बहुत महत्वपूर्ण हैं!' : '🤍 We will miss you, but your blessings mean the world!');
+    launchSad();
+  };
 
   return (
     <div style={{ padding:'80px 30px', textAlign:'center', borderTop:'1px solid rgba(212,175,55,.08)' }}>
-      <div style={{ fontFamily:"'Cinzel',serif", fontSize:'10px', letterSpacing:'5px', color:'rgba(212,175,55,.5)', textTransform:'uppercase', marginBottom:'20px' }}>
-        Will You Join Us?
+      <div style={{ fontFamily: isHindi ? "'Noto Sans Devanagari', sans-serif" : "'Cinzel',serif", fontSize:'10px', letterSpacing:isHindi ? '0px' : '5px', color:'rgba(212,175,55,.5)', textTransform: isHindi ? 'none' : 'uppercase', marginBottom:'20px' }}>
+        {t.willYouJoinUs}
       </div>
       <div style={{ fontFamily:"'Dancing Script',cursive", fontSize:'52px', color:'#f0d080', marginBottom:'12px', fontWeight:400 }}>
-        RSVP
+        {t.rsvp}
       </div>
-      <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'16px', color:'rgba(255,240,200,.5)', fontStyle:'italic', marginBottom:'40px' }}>
-        Your presence is our greatest gift
+      <div style={{ fontFamily: isHindi ? "'Noto Sans Devanagari', sans-serif" : "'Cormorant Garamond',serif", fontSize:'16px', color:'rgba(255,240,200,.5)', fontStyle:'italic', marginBottom:'40px' }}>
+        {t.rsvpSubtext}
       </div>
       <div style={{ display:'flex', gap:'16px', justifyContent:'center', flexWrap:'wrap' }}>
         <button onClick={yes} style={{
-          padding:'14px 40px', fontFamily:"'Cinzel',serif", fontSize:'11px', letterSpacing:'4px',
-          textTransform:'uppercase', cursor:'pointer', border:'none',
+          padding:'14px 40px', fontFamily: isHindi ? "'Noto Sans Devanagari', sans-serif" : "'Cinzel',serif", fontSize:'11px', letterSpacing:isHindi ? '0px' : '4px',
+          textTransform: isHindi ? 'none' : 'uppercase', cursor:'pointer', border:'none',
           background:'linear-gradient(135deg,#d4af37,#b8960c)', color:'#0a0208', fontWeight:600,
           transition:'all .3s ease',
-        }}>💛 Joyfully Attending</button>
+        }}>{t.attending}</button>
         <button onClick={no} style={{
-          padding:'14px 40px', fontFamily:"'Cinzel',serif", fontSize:'11px', letterSpacing:'4px',
-          textTransform:'uppercase', cursor:'pointer',
+          padding:'14px 40px', fontFamily: isHindi ? "'Noto Sans Devanagari', sans-serif" : "'Cinzel',serif", fontSize:'11px', letterSpacing:isHindi ? '0px' : '4px',
+          textTransform: isHindi ? 'none' : 'uppercase', cursor:'pointer',
           background:'transparent', border:'1px solid rgba(212,175,55,.3)', color:'rgba(212,175,55,.6)',
           transition:'all .3s ease',
-        }}>Will Miss You Both</button>
+        }}>{t.notAttending}</button>
       </div>
       {msg && (
         <div style={{ marginTop:'24px', fontFamily:"'Cormorant Garamond',serif", fontSize:'22px', fontStyle:'italic', color:'rgba(240,208,128,.8)' }}>

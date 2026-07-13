@@ -1,8 +1,15 @@
 'use client';
 import { Fragment, useEffect, useState } from 'react';
+import { translations } from '../utils/translations';
+import { localizeNumbers } from '../utils/numberFormatting';
 
-export default function Countdown() {
+interface CountdownProps {
+  language: string;
+}
+
+export default function Countdown({ language }: CountdownProps) {
   const [t, setT] = useState({ d:'00', h:'00', m:'00', s:'00' });
+  const labels = translations[language as 'en' | 'hi'];
   useEffect(() => {
     const target = new Date('2026-08-20T10:00:00+05:30');
     const tick = () => {
@@ -22,10 +29,10 @@ export default function Countdown() {
   }, []);
 
   const items = [
-    { val: t.d, label: 'Days' },
-    { val: t.h, label: 'Hours' },
-    { val: t.m, label: 'Mins' },
-    { val: t.s, label: 'Secs' },
+    { val: localizeNumbers(t.d, language), label: labels.days },
+    { val: localizeNumbers(t.h, language), label: labels.hours },
+    { val: localizeNumbers(t.m, language), label: labels.mins },
+    { val: localizeNumbers(t.s, language), label: labels.secs },
   ];
 
   return (

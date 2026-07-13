@@ -16,6 +16,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Dancing+Script:wght@400;600&display=swap"
           rel="stylesheet"
         />
+        <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
       </head>
       <body style={{ background: '#0a0208' }}>{children}</body>
     </html>

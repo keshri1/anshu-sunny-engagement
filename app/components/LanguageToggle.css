@@ -1,0 +1,79 @@
+/* LanguageToggle.css - Styling for language toggle button */
+
+.language-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 184, 82, 0.3);
+}
+
+.language-toggle {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  letter-spacing: 1px;
+}
+
+.language-toggle:hover {
+  background-color: rgba(255, 184, 82, 0.1);
+  color: #d4af37;
+  transform: scale(1.05);
+}
+
+.language-toggle.active {
+  background: linear-gradient(135deg, #FFB852 0%, #d4af37 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 184, 82, 0.4);
+}
+
+.toggle-separator {
+  color: #ddd;
+  font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .language-toggle-wrapper {
+    top: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .language-toggle {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .language-toggle-wrapper {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 184, 82, 0.2);
+  }
+
+  .language-toggle {
+    color: #aaa;
+  }
+
+  .language-toggle:hover {
+    background-color: rgba(255, 184, 82, 0.15);
+    color: #ffd700;
+  }
+}
