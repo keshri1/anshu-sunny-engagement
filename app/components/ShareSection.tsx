@@ -1,6 +1,6 @@
 'use client';
 
-const MSG = '🌟 You are cordially invited to the Engagement Ceremony of Anshu Kumari & Sunny Keshri! 20th August 2026 at Emerald Garden Banquet Hall, Danapur, Patna 💛';
+const MSG = '🌟 You are cordially invited to the Engagement Ceremony of Sunny Keshri & Anshu Kumari! 20th August 2026 at Emerald Garden Banquet Hall, Danapur, Patna 💛';
 
 export default function ShareSection() {
   const copy = () => navigator.clipboard?.writeText(MSG).then(() => alert('Invite copied! Share the love 💛'));

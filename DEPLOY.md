@@ -1,4 +1,4 @@
-# 🌸 Anshu & Sunny — Engagement Invite · Deployment Guide
+# 🌸 Sunny & Anshu — Engagement Invite · Deployment Guide
 
 ## Deploy to Vercel in 3 Steps
 
@@ -9,7 +9,7 @@
    cd anshu-sunny-engagement
    git init
    git add .
-   git commit -m "Anshu & Sunny engagement invite 💍"
+   git commit -m "Sunny & Anshu engagement invite 💍"
    git remote add origin https://github.com/YOUR_USERNAME/anshu-sunny-invite.git
    git push -u origin main
    ```

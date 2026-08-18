@@ -49,7 +49,7 @@ export interface Translations {
 export const translations: Record<'en' | 'hi', Translations> = {
   en: {
     // Hero Section
-    heroTitle: "Anshu & Sunny",
+    heroTitle: "Sunny & Anshu",
     heroSubtitle: "Ring Ceremony · 20 August 2026",
     
     // Invitation Text
@@ -69,7 +69,7 @@ export const translations: Record<'en' | 'hi', Translations> = {
     
     // Main Story Section
     storyTitle: "A Love Destined to Be",
-    storyText: `"They say when the universe conspires, two hearts find their way to each other. For Anshu & Sunny, that moment has arrived — and we couldn't be more overjoyed to share it with the people who matter most.
+    storyText: `"They say when the universe conspires, two hearts find their way to each other. For Sunny & Anshu, that moment has arrived — and we couldn't be more overjoyed to share it with the people who matter most.
 
 With hearts full of joy and eyes full of starlight, two families invite you to witness the beautiful beginning of a lifelong love story. Come, celebrate, dance, laugh — because love is best when shared."`,
     
@@ -115,17 +115,17 @@ With hearts full of joy and eyes full of starlight, two families invite you to w
     // Closing
     closingMessage: `"Two hearts, one beautiful forever."
 With love & a million blessings — see you soon! 🌸`,
-    signoff: "Anshu ♡ Sunny",
+    signoff: "Sunny ♡ Anshu",
     finalDate: "20 · August · 2026 · Patna, Bihar",
   },
   
   hi: {
     // Hero Section
-    heroTitle: "अंशु और सन्नी",
+    heroTitle: "सन्नी और अंशु",
     heroSubtitle: "रिंग सेरेमनी · 20 अगस्त 2026",
     
     // Invitation Text
-    inviteTitle: "हम आपको अंशु और सनी की सगाई के समारोह में शामिल होने के लिए आमंत्रित करते हैं",
+    inviteTitle: "हम आपको सन्नी और अंशु की सगाई के समारोह में शामिल होने के लिए आमंत्रित करते हैं",
     anshuTitle: "अंशु",
     anshuSubtitle: "श्री. और श्रीमती. मनोज  \nऔर सुषमा केशरी की बेटी",
     heart: "♡",
@@ -141,7 +141,7 @@ With love & a million blessings — see you soon! 🌸`,
     
     // Main Story Section
     storyTitle: "एक निर्धारित प्रेम कहानी",
-    storyText: `"वे कहते हैं कि जब ब्रह्मांड की साजिश होती है, तो दो दिल एक-दूसरे तक पहुँचते हैं। अंशु और सनी के लिए, वह पल आ गया है — और हम इसे उन लोगों के साथ साझा करने के लिए अत्यंत प्रसन्न हैं जो हमारे लिए सबसे महत्वपूर्ण हैं।
+    storyText: `"वे कहते हैं कि जब ब्रह्मांड की साजिश होती है, तो दो दिल एक-दूसरे तक पहुँचते हैं। सन्नी और अंशु के लिए, वह पल आ गया है — और हम इसे उन लोगों के साथ साझा करने के लिए अत्यंत प्रसन्न हैं जो हमारे लिए सबसे महत्वपूर्ण हैं।
 
 हृदय में खुशी और आँखों में तारों की चमक के साथ, दोनों परिवार आपको एक सुंदर जीवन भर की प्रेम कहानी की शुरुआत को देखने के लिए आमंत्रित करते हैं। आओ, मनाओ, नाचो, हँसो — क्योंकि प्रेम सबसे अच्छा है जब साझा किया जाए।"`,
     
@@ -187,7 +187,7 @@ With love & a million blessings — see you soon! 🌸`,
     // Closing
     closingMessage: `"दो दिल, एक सुंदर हमेशा के लिए।"
 प्यार और लाखों आशीर्वादों के साथ — जल्द मिलते हैं! 🌸`,
-    signoff: "अंशु ♡ सन्नी",
+    signoff: "सन्नी ♡ अंशु",
     finalDate: "२० · अगस्त · २०२६ · पटना, बिहार",
   }
 };
