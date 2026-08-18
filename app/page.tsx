@@ -78,10 +78,10 @@ export default function Page() {
           {/* Names */}
           <div className="anim-4" style={{ marginBottom:'20px' }}>
             <div className="shimmer-text" style={{ fontFamily:"'Dancing Script',cursive", fontSize:'clamp(52px,10vw,72px)', lineHeight:1.1, fontWeight:400 }}>
-              {t.anshuTitle}
+              {t.sunnyTitle}
             </div>
             <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'15px', color:'rgba(255,240,200,.65)', lineHeight:1.6, marginTop:'8px' }}>
-              {t.anshuSubtitle.split('\n').map((line, i) => (
+              {t.sunnySubtitle.split('\n').map((line, i) => (
                 <div key={i}>{line}</div>
               ))}
             </div>
@@ -89,10 +89,10 @@ export default function Page() {
               {t.heart}
             </div>
             <div className="shimmer-text" style={{ fontFamily:"'Dancing Script',cursive", fontSize:'clamp(52px,10vw,72px)', lineHeight:1.1, fontWeight:400 }}>
-              {t.sunnyTitle}
+              {t.anshuTitle}
             </div>
             <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'15px', color:'rgba(255,240,200,.65)', lineHeight:1.6, marginTop:'8px' }}>
-              {t.sunnySubtitle.split('\n').map((line, i) => (
+              {t.anshuSubtitle.split('\n').map((line, i) => (
                 <div key={i}>{line}</div>
               ))}
             </div>

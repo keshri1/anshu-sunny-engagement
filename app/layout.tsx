@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Anshu & Sunny — Ring Ceremony · 20 August 2026',
-  description: 'You are cordially invited to celebrate the Engagement of Anshu Kumari & Sunny Keshri on 20th August 2026 at Emerald Garden Banquet Hall, Patna.',
+  title: 'Sunny & Anshu — Ring Ceremony · 20 August 2026',
+  description: 'You are cordially invited to celebrate the Engagement of Sunny Keshri & Anshu Kumari on 20th August 2026 at Emerald Garden Banquet Hall, Patna.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
